@@ -1,0 +1,102 @@
+
+<html>
+<head>
+
+	<title>ISL TO SPEECH</title>
+
+	<style>
+        *{
+	margin:0;
+	padding :0;
+	font-family:sans-serif;
+}
+.banner{
+	width:100%;
+	height:100vh;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://e1.pxfuel.com/desktop-wallpaper/50/882/desktop-wallpaper-signal-black-background-wave-neon-for-signal.jpg");
+	background-size:cover;
+	background-postion:center;
+
+}
+.content{
+	width:100%;
+	position:absolute;
+	top:50%;
+	transform:translateY(-50%);
+	text-align: center;
+	color:A9A9A9;
+}
+.content h1{
+	font-size: 70px;
+	margin-top: 80px;
+
+}
+.content p{
+	margin: 20px auto;
+	font-weight: 100;
+	line-height: 25px;
+}
+button{
+	width:200px;
+	padding:15px 0;
+	text-align: center;
+	margin:20px 10px;
+	border-radius:25px;
+	font-weight: bold;
+	border:2px solid #009688;
+	background: transparent;
+	color:#fff;
+	cursor:pointer;
+	position:relative;
+	overflow:hidden;
+}
+span{
+	background:#009688;
+	height:100%;
+	width:0;
+	border-radius:25px;
+	position:absolute;
+	left:0;
+	bottom:0;
+	z-index:-1;
+	transiton:0.5s;
+}
+button:hover span{
+	width:100%;
+
+
+}
+button:hover{
+	border:none;
+}
+    </style>
+
+
+</head>
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<body>
+	<div class="banner">
+		<div class="content">
+			<h1>ISL TO SPEECH</h1>
+			<div>
+				<button type="button" onClick = "runLetter()"><span></span>LETTERS</button>
+				<button type="button" onClick = "runWords()"><span></span>WORDS</button>
+				<button type="button" onClick = "clearProgram()" ><span></span>CLEAR</button>
+	</div>
+ <script>
+        function runLetter() {
+            fetch('/run_letter');
+        }
+
+        function runWords() {
+            fetch('/run_words');
+        }
+        function clearProgram() {
+            fetch('/clear_program');
+        }
+    </script>
+</body>
+</html>
